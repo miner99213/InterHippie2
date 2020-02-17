@@ -17,9 +17,9 @@
 #define SOUNDS_LASER_METAL  list('sound/effects/projectile_impact/energy_metal1.ogg','sound/effects/projectile_impact/energy_metal2.ogg')
 
 
-#define BULLET_IMPACT_METAL
-#define BULLET_IMPACT_NONE
-#define BULLET_IMPACT_MEAT
+#define BULLET_IMPACT_METAL  "metal"
+#define BULLET_IMPACT_NONE  "none"
+#define BULLET_IMPACT_MEAT  "meat"
 
 
 //Resistance values, used on floors, windows, airlocks, girders, and similar hard targets.
