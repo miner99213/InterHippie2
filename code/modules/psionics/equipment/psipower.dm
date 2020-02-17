@@ -11,14 +11,14 @@
 	if(!istype(owner))
 		qdel(src)
 		return
-	GLOB.processing_objects += src
+	START_PROCESSING(SSpsi, src)
 	..()
 
 /obj/item/psychic_power/Destroy()
 	if(istype(owner) && owner.psi)
 		LAZYREMOVE(owner.psi.manifested_items, src)
 		UNSETEMPTY(owner.psi.manifested_items)
-	GLOB.processing_objects -= src
+	STOP_PROCESSING(SSpsi, src)
 	. = ..()
 
 /obj/item/psychic_power/get_storage_cost()
@@ -44,7 +44,7 @@
 	..()
 	qdel(src)
 
-/obj/item/psychic_power/process()
+/obj/item/psychic_power/Process()
 	if(istype(owner))
 		owner.psi.spend_power(maintain_cost)
 	if(!owner || owner.do_psionics_check(maintain_cost, owner) || loc != owner || (owner.l_hand != src && owner.r_hand != src))

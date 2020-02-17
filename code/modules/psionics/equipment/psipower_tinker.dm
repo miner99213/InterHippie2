@@ -4,16 +4,16 @@
 	force = 1
 	var/emulating = "Crowbar"
 
-/obj/item/psychic_power/tinker/iscrowbar()
+/obj/item/psychic_power/tinker/is_crowbar()
 	return emulating == "Crowbar"
 
-/obj/item/psychic_power/tinker/iswrench()
+/obj/item/psychic_power/tinker/is_wrench()
 	return emulating == "Wrench"
 
-/obj/item/psychic_power/tinker/isscrewdriver()
+/obj/item/psychic_power/tinker/is_screwdriver()
 	return emulating == "Screwdriver"
 
-/obj/item/psychic_power/tinker/iswirecutter()
+/obj/item/psychic_power/tinker/is_wirecutter()
 	return emulating == "Wirecutters"
 
 /obj/item/psychic_power/tinker/attack_self()

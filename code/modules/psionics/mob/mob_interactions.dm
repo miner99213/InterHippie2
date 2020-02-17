@@ -25,12 +25,12 @@
 		INVOKE_PSI_POWERS(src, psi.get_ranged_powers(SSpsi.faculties_by_intent[a_intent]), A)
 	. = ..()
 
-/mob/living/proc/check_psi_grab(obj/item/weapon/grab/G as obj, mob/user as mob)
+/mob/living/proc/check_psi_grab(obj/item/grab/G as obj, mob/user as mob)
 	if(psi && ismob(G.affecting))
 		INVOKE_PSI_POWERS(src, psi.get_grab_powers(SSpsi.faculties_by_intent[a_intent]), G.affecting)
 	. = ..()
 
-/mob/living/attack_empty_hand(var/bp_hand)
+/mob/living/attack_hand(var/bp_hand)
 	if(psi)
 		INVOKE_PSI_POWERS(src, psi.get_manifestations(), src)
 	. = ..()

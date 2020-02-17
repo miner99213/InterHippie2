@@ -75,12 +75,11 @@
 //these will eventually do something but currently cannot be fixed
 /datum/psi_complexus/New(var/mob/_owner)
 	owner = _owner
-	GLOB.processing_objects += src
-	set_extension(src, /datum/extension/armor/psionic)
+	START_PROCESSING(SSpsi, src)
 
 /datum/psi_complexus/Destroy()
 	destroy_aura_image(_aura_image)
-	GLOB.processing_objects -= src
+	STOP_PROCESSING(SSpsi, src)
 	if(owner)
 		cancel()
 		if(owner.client)

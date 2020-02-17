@@ -8,7 +8,7 @@
 	focus = null
 	. = ..()
 
-/obj/item/psychic_power/telekinesis/process()
+/obj/item/psychic_power/telekinesis/Process()
 	if(!focus || !istype(focus.loc, /turf) || get_dist(get_turf(focus), get_turf(owner)) > owner.psi.get_rank(PSI_PSYCHOKINESIS))
 		owner.drop_from_inventory(src)
 		return

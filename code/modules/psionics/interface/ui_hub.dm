@@ -15,7 +15,7 @@
 		new /obj/screen/psi/toggle_psi_menu(_owner, src)
 		)
 	..()
-	GLOB.processing_objects += src
+	START_PROCESSING(SSpsi, src)
 
 /obj/screen/psi/hub/update_icon()
 
@@ -34,14 +34,14 @@
 		if(!component.invisibility) component.screen_loc = "EAST-[++offset]:28,CENTER-3:11"
 
 /obj/screen/psi/hub/Destroy()
-	GLOB.processing_objects -= src
+	STOP_PROCESSING(SSpsi, src)
 	owner = null
 	for(var/thing in components)
 		qdel(thing)
 	components.Cut()
 	. = ..()
 
-/obj/screen/psi/hub/process()
+/obj/screen/psi/hub/Process()
 	if(!istype(owner))
 		qdel(src)
 		return
