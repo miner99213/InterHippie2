@@ -78,7 +78,7 @@
 			//the armour causes the heat energy to spread out, which reduces the damage (and the blood loss)
 			//this is mostly so that armour doesn't cause people to lose MORE fluid from lasers than they would otherwise
 			damage *= FLUIDLOSS_CONC_BURN/FLUIDLOSS_WIDE_BURN
-		bullet_impact_visuals(P, def_zone, damaged)
+		bullet_impact_visuals(P, def_zone)
 		flags &= ~(DAM_SHARP|DAM_EDGE|DAM_LASER)
 
 	if(!P.nodamage)

@@ -376,4 +376,4 @@
 		return ..()
 
 /mob/living/silicon/get_bullet_impact_effect_type(var/def_zone)
-	return BULLET_IMPACT_METAL 
+	return BULLET_IMPACT_METAL

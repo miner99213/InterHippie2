@@ -11,7 +11,7 @@
 	if(set_dir)
 		set_dir(set_dir)
 	. = ..()
-	QDEL_IN(src, duration)
+	qdel(src, duration)
 
 /obj/effect/temp_visual/bloodsplatter
 	icon = 'icons/effects/bloodspatter.dmi'
