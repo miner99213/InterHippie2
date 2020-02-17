@@ -721,6 +721,7 @@
 		//Fire and Brute damage overlay (BSSR)
 		var/hurtdamage = src.getBruteLoss() + src.getFireLoss() + damageoverlaytemp
 		damageoverlaytemp = 0 // We do this so we can detect if someone hits us or not.
+		var/obj/screen/grain = film_grain
 		if(hurtdamage)
 			var/severity = 0
 			switch(hurtdamage)
@@ -731,6 +732,13 @@
 				if(70 to 85)		severity = 5
 				if(85 to INFINITY)	severity = 6
 			overlay_fullscreen("brute", /obj/screen/fullscreen/brute, severity)
+			if(grain)
+				if(severity >= 5) // disorienting blur
+					grain.icon_state = "4 heavy"
+					grain.alpha = 255
+				else
+					grain.icon_state = "9 moderate"
+					grain.alpha = 118
 		else
 			clear_fullscreen("brute")
 
