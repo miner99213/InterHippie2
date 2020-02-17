@@ -3,6 +3,9 @@
 #define EJECT_CASINGS	2 //drop spent casings on the ground after firing
 #define CYCLE_CASINGS	3 //cycle casings, like a revolver. Also works for multibarrelled guns
 
+#define SOUNDS_BULLET_MEAT  list('sound/effects/projectile_impact/bullet_meat1.ogg', 'sound/effects/projectile_impact/bullet_meat2.ogg', 'sound/effects/projectile_impact/bullet_meat3.ogg', 'sound/effects/projectile_impact/bullet_meat4.ogg')
+#define SOUNDS_BULLET_METAL  list('sound/effects/projectile_impact/bullet_metal1.ogg', 'sound/effects/projectile_impact/bullet_metal2.ogg', 'sound/effects/projectile_impact/bullet_metal3.ogg')
+
 /obj/item/weapon/gun/projectile
 	name = "gun"
 	desc = "A gun that fires bullets."
