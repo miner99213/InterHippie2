@@ -3,8 +3,6 @@
 #define EJECT_CASINGS	2 //drop spent casings on the ground after firing
 #define CYCLE_CASINGS	3 //cycle casings, like a revolver. Also works for multibarrelled guns
 
-#define SOUNDS_BULLET_MEAT  list('sound/effects/projectile_impact/bullet_meat1.ogg', 'sound/effects/projectile_impact/bullet_meat2.ogg', 'sound/effects/projectile_impact/bullet_meat3.ogg', 'sound/effects/projectile_impact/bullet_meat4.ogg')
-#define SOUNDS_BULLET_METAL  list('sound/effects/projectile_impact/bullet_metal1.ogg', 'sound/effects/projectile_impact/bullet_metal2.ogg', 'sound/effects/projectile_impact/bullet_metal3.ogg')
 
 /obj/item/weapon/gun/projectile
 	name = "gun"
@@ -126,7 +124,7 @@
 				AM.loc = src
 				ammo_magazine = AM
 				user.visible_message("[user] inserts [AM] into [src].", "<span class='notice'>You insert [AM] into [src].</span>")
-				if(reload_sound) 
+				if(reload_sound)
 					playsound(src.loc, reload_sound, 75, 1)
 			if(SPEEDLOADER)
 				if(loaded.len >= max_shells)
@@ -143,7 +141,7 @@
 						count++
 				if(count)
 					user.visible_message("[user] reloads [src].", "<span class='notice'>You load [count] round\s into [src].</span>")
-					if(reload_sound) 
+					if(reload_sound)
 						playsound(src.loc, reload_sound, 75, 1)
 		AM.update_icon()
 	else if(istype(A, /obj/item/ammo_casing))
@@ -158,7 +156,7 @@
 		C.loc = src
 		loaded.Insert(1, C) //add to the head of the list
 		user.visible_message("[user] inserts \a [C] into [src].", "<span class='notice'>You insert \a [C] into [src].</span>")
-		if(bulletinsert_sound) 
+		if(bulletinsert_sound)
 			playsound(src.loc, bulletinsert_sound, 75, 1)
 
 	update_icon()
@@ -170,7 +168,7 @@
 	if(ammo_magazine)
 		user.put_in_hands(ammo_magazine)
 		user.visible_message("[user] removes [ammo_magazine] from [src].", "<span class='notice'>You remove [ammo_magazine] from [src].</span>")
-		if(unload_sound) 
+		if(unload_sound)
 			playsound(src.loc, unload_sound, 75, 1)
 		ammo_magazine.update_icon()
 		ammo_magazine = null
@@ -186,14 +184,14 @@
 				loaded.Cut()
 			if(count)
 				user.visible_message("[user] unloads [src].", "<span class='notice'>You unload [count] round\s from [src].</span>")
-				if(bulletinsert_sound) 
+				if(bulletinsert_sound)
 					playsound(src.loc, bulletinsert_sound, 75, 1)
 		else if(load_method & SINGLE_CASING)
 			var/obj/item/ammo_casing/C = loaded[loaded.len]
 			loaded.len--
 			user.put_in_hands(C)
 			user.visible_message("[user] removes \a [C] from [src].", "<span class='notice'>You remove \a [C] from [src].</span>")
-			if(bulletinsert_sound) 
+			if(bulletinsert_sound)
 				playsound(src.loc, bulletinsert_sound, 75, 1)
 	else
 		to_chat(user, "<span class='warning'>[src] is empty.</span>")
@@ -248,7 +246,7 @@
 	if(ammo_magazine)
 		to_chat(user, "It has \a [ammo_magazine] loaded.")
 		to_chat(user, "[inexactAmmo()]")
-	
+
 	return
 
 /obj/item/weapon/gun/projectile/proc/getAmmo()
