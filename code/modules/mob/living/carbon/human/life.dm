@@ -737,7 +737,7 @@
 					grain.icon_state = "4 heavy"
 					grain.alpha = 255
 				else
-					grain.icon_state = "9 moderate"
+					grain.icon_state = "7 light"
 					grain.alpha = 118
 		else
 			clear_fullscreen("brute")
@@ -753,7 +753,7 @@
 					if(100 to INFINITY)		healths.icon_state = "health6"
 					if(80 to 100)			healths.icon_state = "health5"
 					if(60 to 80)			healths.icon_state = "health4"
-					//if(60 to 80)			healths.icon_state = "health3"
+					if(60 to 80)			healths.icon_state = "health3"
 					if(40 to 60)			healths.icon_state = "health2"
 					if(20 to 40)			healths.icon_state = "health1"
 					if(0 to 20)				healths.icon_state = "health0"
