@@ -172,6 +172,7 @@
 	if(!Proj || Proj.nodamage)
 		return
 
+	bullet_impact_visuals(Proj)
 	adjustBruteLoss(Proj.damage)
 	return 0
 
