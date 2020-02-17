@@ -17,6 +17,11 @@
 #define SOUNDS_LASER_METAL  list('sound/effects/projectile_impact/energy_metal1.ogg','sound/effects/projectile_impact/energy_metal2.ogg')
 
 
+#define BULLET_IMPACT_METAL
+#define BULLET_IMPACT_NONE
+#define BULLET_IMPACT_MEAT
+
+
 //Resistance values, used on floors, windows, airlocks, girders, and similar hard targets.
 //Resistance value is also used on simple animals.
 //Reduces the damage they take by flat amounts
