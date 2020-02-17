@@ -1904,7 +1904,7 @@
 	var/obj/item/organ/external/E = get_organ(def_zone)
 	if(!E || E.is_stump())
 		return BULLET_IMPACT_NONE
-	if(BP_IS_ROBOTIC(E))
+	if(ORGAN_ROBOT(E))
 		return BULLET_IMPACT_METAL
 	return BULLET_IMPACT_MEAT
 
@@ -1920,4 +1920,4 @@
 				var/matrix/M = new()
 				B.transform = M.Scale(scale)
 
-				new /obj/effect/temp_visual/bloodsplatter(loc, hit_dir, species.blood_color) 
+				new /obj/effect/temp_visual/bloodsplatter(loc, hit_dir, species.blood_color)
