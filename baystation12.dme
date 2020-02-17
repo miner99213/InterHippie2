@@ -61,6 +61,7 @@
 #include "code\__defines\tick.dm"
 #include "code\__defines\topic.dm"
 #include "code\__defines\turfs.dm"
+#include "code\__defines\tools.dm"
 #include "code\__defines\weapons.dm"
 #include "code\__defines\xenoarcheaology.dm"
 #include "code\__defines\ZAS.dm"
