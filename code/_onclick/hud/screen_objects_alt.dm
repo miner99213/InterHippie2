@@ -320,7 +320,7 @@
 
 /obj/screen/intent/update_icon()
 	icon_state = "intent_[intent]"
-	
+
 /obj/screen/atk_intents
 	name = "attack intents"
 	//icon = 'icons/mob/screen/dark.dmi'
@@ -545,14 +545,13 @@
 				else
 					E.defense_intent = I_PARRY
 					E.combat_intent_icon.icon_state = "parry"
-		
-		if("family_skills")
-			if(ishuman(usr))
-				var/mob/living/carbon/human/D = usr
-				if(D.check_skills)
-					D.check_skills_icon.icon_state = "skills_press"
-				if(D.check_family)
-					D.check_family_icon.icon_state = "family_press"
+
+		if("skills_family")
+			var/mob/living/carbon/human/D = usr
+			if(D.check_skills)
+				D.check_skills.icon_state = "skills_press"
+			if(D.check_family)
+				D.check_family.icon_state = "family_press"
 
 		if("fixeye")
 			usr.face_direction()

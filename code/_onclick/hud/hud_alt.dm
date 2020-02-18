@@ -29,7 +29,7 @@
 	var/obj/screen/l_hand_hud_object
 	var/obj/screen/swaphands_hud_object
 	var/obj/screen/atk_intents
-	var/obj/screen/family_skills
+	var/obj/screen/skills_family
 	var/obj/screen/action_intent
 	var/obj/screen/move_intent
 
