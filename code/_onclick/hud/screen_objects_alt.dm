@@ -320,6 +320,31 @@
 
 /obj/screen/intent/update_icon()
 	icon_state = "intent_[intent]"
+	
+/obj/screen/atk_intents
+	name = "attack intents"
+	//icon = 'icons/mob/screen/dark.dmi'
+	icon_state = "weak"
+	screen_loc = ui_atk_intents//ui_acti
+	var/atk_intent = I_WEAK
+
+/obj/screen/atk_intents/Click(var/location, var/control, var/params)
+	var/list/P = params2list(params)
+	var/icon_x = text2num(P["icon-x"])
+	var/icon_y = text2num(P["icon-y"])
+	atk_intent = I_AIM
+	if(icon_x <= world.icon_size/2)
+		if(icon_y <= world.icon_size/2)
+			atk_intent = I_OFFENSE // I_DEFENSE
+		else
+			atk_intent = I_DEFENSE // I_OFFENSE
+	else if(icon_y <= world.icon_size/2)
+		atk_intent = I_AIM
+	update_icon()
+	usr.a_atk_intent = atk_intent
+
+/obj/screen/atk_intents/update_icon()
+	icon_state = "atk_[atk_intent]"
 
 /obj/screen/Click(location, control, params)
 	if(!usr)	return 1
@@ -520,6 +545,14 @@
 				else
 					E.defense_intent = I_PARRY
 					E.combat_intent_icon.icon_state = "parry"
+		
+		if("family_skills")
+			if(ishuman(usr))
+				var/mob/living/carbon/human/D = usr
+				if(D.check_skills)
+					D.check_skills_icon.icon_state = "skills_press"
+				if(D.check_family)
+					D.check_family_icon.icon_state = "family_press"
 
 		if("fixeye")
 			usr.face_direction()
