@@ -90,6 +90,13 @@
 		using.screen_loc = "CENTER-7, CENTER+7"
 		hud_elements |= using
 
+	if(atk_intents)
+		using = new /obj/screen/atk_intents()
+		using.icon = ui_style
+		src.adding += using
+		//atk_intent = using
+		hud_elements |= using
+
 	// Draw the attack intent dialogue.
 	if(hud_data.has_a_intent)
 
@@ -326,13 +333,15 @@
 	mymob.jump_icon.name = "jump"
 	mymob.jump_icon.screen_loc = ui_atk
 	hud_elements |= mymob.jump_icon
-	
+
+/*
 	mymob.skills_family = new /obj/screen()
 	mymob.skills_family = ui_style
 	mymob.skills_family.icon_state = "family_skills"
 	mymob.skills_family.name = "skills_family"
 	mymob.fixeye.screen_loc = ui_skills_family
 	hud_elements |= mymob.skills_family
+*/
 
 	mymob.fixeye = new /obj/screen()
 	mymob.fixeye.icon = ui_style
