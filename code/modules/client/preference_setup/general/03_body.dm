@@ -151,6 +151,8 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		. += "<br>"
 
 	. += "Species: <a href='?src=\ref[src];show_species=1'>[pref.species]</a><br>"
+	if(/datum/species/nabber)
+		.+= "unavailable."
 	. += "Blood Type: <a href='?src=\ref[src];blood_type=1'>[pref.b_type]</a><br>"
 
 	if(has_flag(mob_species, HAS_BASE_SKIN_COLOURS))
