@@ -767,8 +767,6 @@ $(function() {
 	}
 	if(savedConfig.stheme){
 		setTheme(savedConfig.stheme);
-	} else {
-		setTheme('dark')
 	}
 	if (savedConfig.spingDisabled) {
 		if (savedConfig.spingDisabled == 'true') {
